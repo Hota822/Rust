@@ -1,0 +1,12 @@
+/opt/rustup/rocket-webapi/target/debug/deps/notify-83eaf5857e790276.rmeta: /home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/lib.rs /home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/inotify.rs /home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/null.rs /home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/poll.rs /home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/debounce/mod.rs /home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/debounce/timer.rs
+
+/opt/rustup/rocket-webapi/target/debug/deps/libnotify-83eaf5857e790276.rlib: /home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/lib.rs /home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/inotify.rs /home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/null.rs /home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/poll.rs /home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/debounce/mod.rs /home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/debounce/timer.rs
+
+/opt/rustup/rocket-webapi/target/debug/deps/notify-83eaf5857e790276.d: /home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/lib.rs /home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/inotify.rs /home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/null.rs /home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/poll.rs /home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/debounce/mod.rs /home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/debounce/timer.rs
+
+/home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/lib.rs:
+/home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/inotify.rs:
+/home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/null.rs:
+/home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/poll.rs:
+/home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/debounce/mod.rs:
+/home/vagrant/.cargo/registry/src/github.com-1ecc6299db9ec823/notify-4.0.14/src/debounce/timer.rs:
