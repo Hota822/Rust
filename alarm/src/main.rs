@@ -15,7 +15,7 @@ fn main() {
         Err(_) => return,
     };
 
-    if input > 10 {
+    if input > 60 {
         println!("too much");
         return;
     }
@@ -24,7 +24,7 @@ fn main() {
     // loopp
     loop {
         println!("{} minutes remained", input);
-        thread::sleep(Duration::from_millis(1000));
+        thread::sleep(Duration::from_millis(1000 * 60));
         input -= 1;
         if input == 0 { break; }
     }
