@@ -1,13 +1,16 @@
 extern crate reqwest;
+// JSONを使用するためのライブラリ
 extern crate serde;
 extern crate bytes;
 extern crate base64;
 extern crate hmac;
 extern crate sha2;
 
+// JSONを使用するためのライブラリ
 #[macro_use]
 extern crate serde_derive;
 
+// JSONを使用するためのライブラリ
 #[macro_use]
 extern crate serde_json;
 

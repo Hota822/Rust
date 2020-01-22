@@ -15,3 +15,9 @@ fn main() {
         .mount("/", routes![index, todos, new_todo, todo_by_id])
         .launch();
 }
+
+pub fn valify_signature(&self, channel_secret_key: &str, channel_token: &str) -> bool {
+    // シークレットキーを暗号化
+
+
+}

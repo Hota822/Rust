@@ -17,6 +17,9 @@ use line_messaging_api_rocket::events::{ ReplyableEvent };
 use line_messaging_api_rocket::utils;
 use line_messaging_api_rocket::rocket_line::models::{ Body, Signature };
 
+
+//　/callbackにポストが来た時の動作、リクエストにbodyを含む、
+
 #[post("/callback", format="application/json", data = "<body>")]
 fn webhook (signature: Signature, body: Body,) -> Result<(), Box<std::error::Error>> { 
     let bot = LineBot::new(

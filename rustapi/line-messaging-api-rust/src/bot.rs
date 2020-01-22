@@ -1,6 +1,6 @@
 use reqwest::Client;
 use reqwest::header::{ Authorization, Bearer };
-use reqwest::Response; 
+use reqwest::Response;
 
 use serde_json::Value;
 
@@ -11,37 +11,54 @@ use models::LineBotConfig;
 use messages::LineMessage;
 use sources::{ LineSource, LineSourceType };
 
+// 定数の設定
 static BASE_URL: &'static str = "https://api.line.me/v2/bot";
 
+// LineBot Structの作成
 pub struct LineBot {
+    // config : datatype=LineBotConfig
     pub config: LineBotConfig,
+    // client : datatype=Client
     pub client: Client,
+    // LineBotConfigはmodels.rsに定義されている
+    // Client はreqwestに定義されている
 }
 
+// LineBotの実装
 impl LineBot {
+    // LineBotインスタンスの生成
+    // 引数：Line秘密鍵、トークン、返り値：LineBotインスタンス
     pub fn new(channel_secret: &str, channel_token: &str) -> LineBot {
-        LineBot { 
+        LineBot {
             config: LineBotConfig::new(channel_secret, channel_token),
             client: Client::new()
         }
     }
 
+    // 署名を認証する。返り値はBool
     pub fn check_signature(&self, body: &str, signature: &str) -> bool {
         let expect_signature = self.get_signature(body);
         expect_signature == signature
     }
 
     pub fn get_signature(&self, body: &str) -> String {
+        // ハッシュ化するためのライブラリ（テンプレ通り）
         use sha2::Sha256;
         use hmac::{Hmac, Mac};
         use base64::encode;
         type HmacSha256 = Hmac<Sha256>;
 
+        // Hmacインスタンスを新規作成し、秘密鍵にchannel_secretを入れる（バイト値）
         let mut mac = HmacSha256::new_varkey(self.config.get_channel_secret().as_bytes())
             .expect("HMAC can take key of any size");
+        // macにメッセージを追加する
         mac.input(body.as_bytes());
+        // ハッシュの作成結果を代入
         let result = mac.result();
+        // base64でエンコードする
+        // let result  = encode(&result.code().to_vec()); //こっちでもいいのでは？
         let expect_signature  = encode(&result.code().to_vec());
+        // 値を返す
         expect_signature
     }
 
@@ -142,3 +159,4 @@ impl LineBot {
     }
 }
 
+s

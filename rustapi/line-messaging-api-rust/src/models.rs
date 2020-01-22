@@ -1,9 +1,11 @@
+// LineBotConfigの構造体の定義、JSONパース追加
 #[derive(Serialize, Deserialize, Clone)]
 pub struct LineBotConfig {
     channel_secret: String,
     channel_token:  String,
 }
 
+// 引数にLINE秘密鍵、トークンを受け、LineBotConfigを返す
 impl LineBotConfig {
     pub fn new(channel_secret: &str, channel_token: &str) -> LineBotConfig{
         LineBotConfig {
@@ -12,10 +14,11 @@ impl LineBotConfig {
         }
     }
 
+    // channel_secretの複製を返す
     pub fn get_channel_secret(&self) -> String{
         self.channel_secret.clone()
     }
-
+    // channel_secret_tokenの複製を返す
     pub fn get_channel_token(&self) -> String{
         self.channel_token.clone()
     }
