@@ -283,6 +283,201 @@ fn main() {
     say_something(Weekday::Monday);
     say_something(Weekday::Friday);
 
+    assert_eq!(2, Month::February as isize);
+
+    
+    use crate::Task::*;
+    let tasks = vec![
+        AssignedTo(String::from("aaaa")),
+        Working {
+            assignee: String::from("bbbb"),
+            remaining_hours: 18,
+        },
+        Done
+    ];
+
+    for (i, task) in tasks.iter().enumerate() {
+        match task {
+            AssignedTo(assignee) => {
+                println!("Task: {} is assigned to {}", i, assignee)
+            },
+            Working { assignee, remaining_hours } => {
+                println!("{} is working on task: {}. {} hours remaining ", i, assignee, remaining_hours)
+            },
+            _ => println!("Task: {} is other status({:?})", i, task)
+        }
+    }
+
+    // 5-3-4
+    use shape::Polygon3;
+
+    let _s1 = Polygon3 {
+        vertexes: vec![(2, 2)],
+        .. Default::default()
+    };
+
+    let s2 = StrRefs {
+        s1: "aaa",
+        s2: "bbb",
+    };
+    println!("s1: {}, s2: {}",s2.s1, s2.s2);
+
+    let vertexes = vec![
+        CartesianCoordinates {x: 0.0, y: 0.0},
+        CartesianCoordinates {x: 50.0, y: 0.0},
+        CartesianCoordinates {x: 30.0, y: 20.0},
+    ];
+    let poly = Polygon4 { vertexes };
+    assert_eq!(poly.vertexes[0].x, 0.0);
+    assert_eq!(poly.vertexes[0].y, 0.0);
+
+    let a: A = Default::default();
+    println!("struct A ({} bytes)\n  f0: {:p}\n  f1: {:p}\n  f2: {:p}\n", std::mem::size_of::<A>(), &a.f0, &a.f1, &a.f2);
+
+    // 5-4-1
+    let i1 = 42;
+    let _fl1 = i1 as f64 / 2.5;
+    let c1 = 'a';
+    assert_eq!(97, c1 as i32);
+
+    let i2 = 300;
+    let u1 = i2 as u8;
+    assert_eq!(44, u1);
+
+    // 5-4-2
+
+    let t1 = ('a', 42);
+    // let t2 = t1 as (u32, u8) // error
+    let v1 = vec![b'h', b'e', b'l', b'l', b'o'];
+    // let v2 = v1 as Vec<u16>; // error
+    let _t3 = (t1.0 as u32, t1.1 as i8);
+    let _v3 = v1.iter().map(|&n| n as u16).collect::<Vec<u16>>();
+    let v4: Vec<u8> = From::from("hello");
+    assert_eq!(v1, v4);
+
+    // 5-4-3
+    let p1 = Box::new(10);
+    // let p2 = p1 as *mut i32; // error
+    let _p3: *mut i32 = unsafe { std::mem::transmute(p1)} ;
+    let fl1 = 5.6789e+3_f32;
+    let i1 = fl1 as i32;
+    println!("{}", i1);
+    let i2: i32 = unsafe { std::mem::transmute(fl1) };
+    println!("{}", i2);
+
+    let v1: Vec<u8> = vec!(3, 4, 5);
+    let v2 = vec![3u8, 4u8, 5u8];
+    assert_eq!(v1, v2);
+    assert_eq!(Some(&3u8), v1.first());
+    assert_eq!(Some(&3u8), (&v1[..]).first());
+
+    let mut s1 = "Type coercion".to_string();
+    let s2 = "is actually easy.".to_string();
+    s1.push_str(&s2);
+
+    let p1 = &&&&[1,2,3,4];
+    let _p2: &[i32; 4] = p1;
+
+    let p3 = &&[1,2,3,4];
+    let p4: &[i32; 4] = p3;
+    let _p5: &[i32] = p4;
+    // let p6: &[i32] = p3; // error
+
+    let mut b1 = Box::new(0);
+    let s1 = String::from("deref");
+    let v1 = vec![1, 2, 3];
+    f2(&mut b1, &s1, &v1);
+    assert_eq!(8, *b1);
+
+    let mut v = vec![0; 10];
+    f4(&mut v[..]);
+    assert_eq!(10 ,v[0]);
+
+    let a1 = [1,2,3,4];
+    assert_eq!(1, f5(&a1));
+    assert_eq!(1, f6(Box::new(a1)));
+
+    let mut d: Box<dyn std::fmt::Debug>;
+
+    d = Box::new([1, 2]);
+    print_typename(d);
+    d = Box::new(Some(1));
+    print_typename(d);
+
+}
+
+fn f5(p: &[i32]) -> i32 { p[0]}
+fn f6(p: Box<[i32]>) -> i32 { p[0]}
+
+fn f3(slice: &[usize]) -> usize {
+    slice.len()
+}
+
+fn f4(slice: &mut [usize]) {
+    let len = f3(slice);
+    slice[0] = len;
+}
+
+fn f2(n: &mut usize, str: &str, slice: &[i32]) {
+    *n = str.len() + slice.len();
+}
+
+// #[repr(C)]
+#[derive(Default)]
+struct A {f0: u8, f1: u32, f2: u8}
+
+pub struct Polygon4<T> {
+    pub vertexes: Vec<T>
+}
+
+trait Coordinates {}
+
+#[derive(Default)]
+struct CartesianCoordinates {
+    x: f64,
+    y: f64,
+}
+impl Coordinates for CartesianCoordinates {}
+
+#[derive(Default)]
+struct PolarCoordinates {
+    _r: f64,
+    _theta: f64,
+}
+impl Coordinates for PolarCoordinates {}
+
+struct StrRefs<'a> {
+    s1: &'a str,
+    s2: &'a str,
+}
+
+mod shape {
+    #[derive(Default)]
+    pub struct Polygon3 {
+        pub vertexes: Vec<(i32, i32)>,
+        pub stroke_width: u8,
+        pub fill: (u8, u8, u8),
+        // internal_id: String,
+    }
+}
+
+type UserName3 = String;
+
+
+#[derive(Debug)]
+enum Task {
+    _Open,
+    AssignedTo(UserName3),
+    Working {
+        assignee: UserName3,
+        remaining_hours: u16,
+    },
+    Done,
+}
+
+
+enum Month {
+    _January = 1, February = 2, _March = 3, _December = 12
 }
 
 fn say_something(weekday: Weekday) {
@@ -292,9 +487,10 @@ fn say_something(weekday: Weekday) {
         println!("It is still {:?}.", weekday)
     }
 }
+
 #[derive(Debug, PartialEq)]
 enum Weekday {
-    Monday, TuesDay, Wednesday, Thursday, Friday,
+    Monday, _TuesDay, _Wednesday, _Thursday, Friday,
 }
 
 #[derive(Debug, PartialEq)]
