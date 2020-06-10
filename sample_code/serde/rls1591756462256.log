@@ -1,0 +1,12 @@
+{"artifact":"/home/hota822/rust/Rust/sample/serde/target/rls/debug/deps/unicode_xid-8488695499ad31e6.d","emit":"dep-info"}
+{"artifact":"/home/hota822/rust/Rust/sample/serde/target/rls/debug/deps/save-analysis/libunicode_xid-8488695499ad31e6.json","emit":"save-analysis"}
+{"artifact":"/home/hota822/rust/Rust/sample/serde/target/rls/debug/deps/libunicode_xid-8488695499ad31e6.rmeta","emit":"metadata"}
+{"artifact":"/home/hota822/rust/Rust/sample/serde/target/rls/debug/deps/libunicode_xid-8488695499ad31e6.rlib","emit":"link"}
+{"artifact":"/home/hota822/rust/Rust/sample/serde/target/rls/debug/deps/proc_macro2-440f4bb2ecad955a.d","emit":"dep-info"}
+{"artifact":"/home/hota822/rust/Rust/sample/serde/target/rls/debug/deps/save-analysis/libproc_macro2-440f4bb2ecad955a.json","emit":"save-analysis"}
+{"artifact":"/home/hota822/rust/Rust/sample/serde/target/rls/debug/deps/libproc_macro2-440f4bb2ecad955a.rmeta","emit":"metadata"}
+{"artifact":"/home/hota822/rust/Rust/sample/serde/target/rls/debug/deps/libproc_macro2-440f4bb2ecad955a.rlib","emit":"link"}
+{"artifact":"/home/hota822/rust/Rust/sample/serde/target/rls/debug/deps/quote-41e0521733b2f2fe.d","emit":"dep-info"}
+{"artifact":"/home/hota822/rust/Rust/sample/serde/target/rls/debug/deps/save-analysis/libquote-41e0521733b2f2fe.json","emit":"save-analysis"}
+{"artifact":"/home/hota822/rust/Rust/sample/serde/target/rls/debug/deps/libquote-41e0521733b2f2fe.rmeta","emit":"metadata"}
+{"artifact":"/home/hota822/rust/Rust/sample/serde/target/rls/debug/deps/libquote-41e0521733b2f2fe.rlib","emit":"link"}

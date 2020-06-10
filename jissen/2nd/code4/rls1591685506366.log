@@ -1,0 +1,100 @@
+[2020-06-09T06:52:02Z ERROR rls::actions::hover] extract_decl: error: BadLocation
+[2020-06-09T07:05:19Z ERROR rls::actions::hover] extract_decl: error: BadLocation
+thread 'request-worker-3' panicked at 'byte index 1549 is not a char boundary; it is inside 'ｋ' (bytes 1548..1551) of `fn main() {
+    code4_2();
+}
+
+
+fn code4_2() {
+    let _n = 42;
+    let _c = ' ';
+
+    fn hello() {
+        println!("     ");
+    }
+
+    assert_eq!(hello(), ());
+    assert_eq!(std::mem::size_of::<()>(), 0);
+
+    let b1 = true;
+    let b2 = !b1;
+    assert`[...]', /rustc/a74d1862d4d87a56244958416fd05976c58ca1a8/src/libcore/str/mod.rs:1920:47
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+thread 'request-worker-3' panicked at 'byte index 1549 is not a char boundary; it is inside 'か' (bytes 1548..1551) of `fn main() {
+    code4_2();
+}
+
+
+fn code4_2() {
+    let _n = 42;
+    let _c = ' ';
+
+    fn hello() {
+        println!("     ");
+    }
+
+    assert_eq!(hello(), ());
+    assert_eq!(std::mem::size_of::<()>(), 0);
+
+    let b1 = true;
+    let b2 = !b1;
+    assert`[...]', /rustc/a74d1862d4d87a56244958416fd05976c58ca1a8/src/libcore/str/mod.rs:2052:47
+thread 'request-worker-5' panicked at 'byte index 1550 is not a char boundary; it is inside 'か' (bytes 1548..1551) of `fn main() {
+    code4_2();
+}
+
+
+fn code4_2() {
+    let _n = 42;
+    let _c = ' ';
+
+    fn hello() {
+        println!("     ");
+    }
+
+    assert_eq!(hello(), ());
+    assert_eq!(std::mem::size_of::<()>(), 0);
+
+    let b1 = true;
+    let b2 = !b1;
+    assert`[...]', /rustc/a74d1862d4d87a56244958416fd05976c58ca1a8/src/libcore/str/mod.rs:2052:47
+thread 'request-worker-5' panicked at 'byte index 1549 is not a char boundary; it is inside 'ｋ' (bytes 1548..1551) of `fn main() {
+    code4_2();
+}
+
+
+fn code4_2() {
+    let _n = 42;
+    let _c = ' ';
+
+    fn hello() {
+        println!("     ");
+    }
+
+    assert_eq!(hello(), ());
+    assert_eq!(std::mem::size_of::<()>(), 0);
+
+    let b1 = true;
+    let b2 = !b1;
+    assert`[...]', /rustc/a74d1862d4d87a56244958416fd05976c58ca1a8/src/libcore/str/mod.rs:1920:47
+thread 'request-worker-2' panicked at 'byte index 1550 is not a char boundary; it is inside 'か' (bytes 1548..1551) of `fn main() {
+    code4_2();
+}
+
+
+fn code4_2() {
+    let _n = 42;
+    let _c = ' ';
+
+    fn hello() {
+        println!("     ");
+    }
+
+    assert_eq!(hello(), ());
+    assert_eq!(std::mem::size_of::<()>(), 0);
+
+    let b1 = true;
+    let b2 = !b1;
+    assert`[...]', /rustc/a74d1862d4d87a56244958416fd05976c58ca1a8/src/libcore/str/mod.rs:2052:47
+thread 'request-worker-2' panicked at 'byte index 18446744073709551615 is out of bounds of `:o`', /rustc/a74d1862d4d87a56244958416fd05976c58ca1a8/src/libcore/str/mod.rs:1987:47
+thread 'request-worker-0' panicked at 'explicit panic', /cargo/registry/src/github.com-1ecc6299db9ec823/rustc-ap-rustc_errors-654.0.0/diagnostic_builder.rs:416:13

@@ -1,0 +1,5 @@
+[2020-06-09T05:37:56Z ERROR rls::actions::hover] extract_decl: error: BadLocation
+[2020-06-09T05:42:59Z ERROR rls::actions::hover] extract_decl: error: BadLocation
+thread 'request-worker-1' panicked at 'explicit panic', /cargo/registry/src/github.com-1ecc6299db9ec823/rustc-ap-rustc_errors-654.0.0/diagnostic_builder.rs:416:13
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[2020-06-09T06:01:10Z ERROR rls::actions::hover] racer_def: skipping non-existant file: "/home/hota822/rust/Rust/jissen/code3/bitonic-sorter/benchmark/benchmark.rs"
